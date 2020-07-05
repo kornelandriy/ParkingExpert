@@ -15,6 +15,7 @@
 ParkingExpert.DB/obj/
 ParkingExpert.Models/obj/
 ParkingExpert.Repositories/obj/
+ParkingExpert.Services/obj/
 .vs/
 bin/
 /ParkingExpert/obj/

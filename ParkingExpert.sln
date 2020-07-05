@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingExpert.Models", "Par
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingExpert.Repositories", "ParkingExpert.Repositories\ParkingExpert.Repositories.csproj", "{BD93A230-5A09-474F-A65B-9044153FFFCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingExpert.Services", "ParkingExpert.Services\ParkingExpert.Services.csproj", "{13E57F5A-5C6D-446C-AAE0-EBAC99F3E6E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{BD93A230-5A09-474F-A65B-9044153FFFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD93A230-5A09-474F-A65B-9044153FFFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD93A230-5A09-474F-A65B-9044153FFFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E57F5A-5C6D-446C-AAE0-EBAC99F3E6E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E57F5A-5C6D-446C-AAE0-EBAC99F3E6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E57F5A-5C6D-446C-AAE0-EBAC99F3E6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E57F5A-5C6D-446C-AAE0-EBAC99F3E6E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

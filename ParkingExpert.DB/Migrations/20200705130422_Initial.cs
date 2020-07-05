@@ -14,9 +14,10 @@ namespace ParkingExpert.DB.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CarPlate = table.Column<string>(nullable: true),
-                    Payed = table.Column<bool>(nullable: false),
-                    ArrivedAt = table.Column<DateTime>(nullable: true),
-                    DepartureAt = table.Column<DateTime>(nullable: true)
+                    PayedAt = table.Column<DateTime>(nullable: true),
+                    ArrivedAt = table.Column<DateTime>(nullable: false),
+                    DepartureAt = table.Column<DateTime>(nullable: true),
+                    PayedAmount = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

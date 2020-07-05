@@ -8,6 +8,8 @@ using Microsoft.Extensions.Hosting;
 using ParkingExpert.DB;
 using ParkingExpert.Repositories.Abstractions;
 using ParkingExpert.Repositories.Implementations;
+using ParkingExpert.Services.Abstractions;
+using ParkingExpert.Services.Implementations;
 using ApiVersion = Microsoft.AspNetCore.Mvc.ApiVersion;
 
 namespace ParkingExpert
@@ -30,6 +32,8 @@ namespace ParkingExpert
                     optionsBuilder => optionsBuilder.MigrationsAssembly(typeof(PEDataContext).GetTypeInfo().Assembly.GetName().Name)));
             
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient(typeof(IPaymentService), typeof(PaymentService));
+            services.AddTransient(typeof(IParkingService), typeof(ParkingService));
             services.AddApiVersioning(x =>  
             {  
                 x.DefaultApiVersion = new ApiVersion(1, 0);  
