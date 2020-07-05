@@ -15,7 +15,11 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "C:\\repos\\ParkingExpert\\ParkingExpert.DB\\ParkingExpert.DB.csproj": {
+            "projectPath": "C:\\repos\\ParkingExpert\\ParkingExpert.DB\\ParkingExpert.DB.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
