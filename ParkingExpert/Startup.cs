@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using ParkingExpert.DB;
 
 namespace ParkingExpert
 {
@@ -25,6 +21,10 @@ namespace ParkingExpert
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("PEConnectionString");
+            services.AddDbContext<PEDataContext>(options =>
+                options.UseSqlServer(connectionString,
+                    optionsBuilder => optionsBuilder.MigrationsAssembly(typeof(PEDataContext).GetTypeInfo().Assembly.GetName().Name)));
             services.AddControllers();
         }
 

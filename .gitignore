@@ -12,3 +12,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 .idea/
+ParkingExpert.DB/obj/
+ParkingExpert/obj/
+.vs/
+bin/
