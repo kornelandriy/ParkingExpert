@@ -8,6 +8,5 @@ namespace ParkingExpert.DB.Entities
         public bool Payed { get; set; }
         public DateTime? ArrivedAt { get; set; }
         public DateTime? DepartureAt { get; set; }
-        public bool IsAvailable { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ParkingExpert.DB.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,8 +16,7 @@ namespace ParkingExpert.DB.Migrations
                     CarPlate = table.Column<string>(nullable: true),
                     Payed = table.Column<bool>(nullable: false),
                     ArrivedAt = table.Column<DateTime>(nullable: true),
-                    DepartureAt = table.Column<DateTime>(nullable: true),
-                    IsAvailable = table.Column<bool>(nullable: false)
+                    DepartureAt = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -35,23 +34,6 @@ namespace ParkingExpert.DB.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Settings", x => x.Id);
-                });
-
-            migrationBuilder.InsertData(
-                table: "ParkingPlaces",
-                columns: new[] { "Id", "ArrivedAt", "CarPlate", "DepartureAt", "IsAvailable", "Payed" },
-                values: new object[,]
-                {
-                    { 1, null, null, null, true, false },
-                    { 2, null, null, null, true, false },
-                    { 3, null, null, null, true, false },
-                    { 4, null, null, null, true, false },
-                    { 5, null, null, null, true, false },
-                    { 6, null, null, null, true, false },
-                    { 7, null, null, null, true, false },
-                    { 8, null, null, null, true, false },
-                    { 9, null, null, null, true, false },
-                    { 10, null, null, null, true, false }
                 });
 
             migrationBuilder.InsertData(

@@ -35,77 +35,12 @@ namespace ParkingExpert.DB.Migrations
                     b.Property<DateTime?>("DepartureAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsAvailable")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("Payed")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
                     b.ToTable("ParkingPlaces");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 2,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 3,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 4,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 5,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 6,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 7,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 8,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 9,
-                            IsAvailable = true,
-                            Payed = false
-                        },
-                        new
-                        {
-                            Id = 10,
-                            IsAvailable = true,
-                            Payed = false
-                        });
                 });
 
             modelBuilder.Entity("ParkingExpert.DB.Entities.Settings", b =>

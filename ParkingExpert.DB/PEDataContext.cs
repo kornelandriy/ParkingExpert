@@ -7,12 +7,9 @@ namespace ParkingExpert.DB
 {
     public class PEDataContext : DbContext
     {
-        private readonly IConfiguration _configuration;
-        public PEDataContext(DbContextOptions<PEDataContext> options, 
-            IConfiguration configuration)
+        public PEDataContext(DbContextOptions<PEDataContext> options)
             : base(options)
         {
-            _configuration = configuration;
         }
 
         public DbSet<ParkingPlace> ParkingPlaces { get; set; }
@@ -28,19 +25,6 @@ namespace ParkingExpert.DB
                         Id = 1,
                         PricePerHour = 10
                     });
-
-            var parkingCapacity = int.Parse(_configuration["ParkingCapacity"]);
-            var parking = new List<ParkingPlace>();
-            for (var i = 1; i <= parkingCapacity; i++)
-            {
-                parking.Add(new ParkingPlace
-                {
-                    Id = i,
-                    IsAvailable = true
-                });
-            }
-            modelBuilder.Entity<ParkingPlace>()
-                .HasData(parking);
         }
     }
 }
