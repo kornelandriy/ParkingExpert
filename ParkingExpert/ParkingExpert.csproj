@@ -8,11 +8,13 @@
       <ProjectReference Include="..\ParkingExpert.DB\ParkingExpert.DB.csproj" />
       <ProjectReference Include="..\ParkingExpert.Models\ParkingExpert.Models.csproj" />
       <ProjectReference Include="..\ParkingExpert.Repositories\ParkingExpert.Repositories.csproj" />
+      <ProjectReference Include="..\ParkingExpert.Services\ParkingExpert.Services.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNet.WebApi.Versioning" Version="4.0.0" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.1" />
     </ItemGroup>
 
 

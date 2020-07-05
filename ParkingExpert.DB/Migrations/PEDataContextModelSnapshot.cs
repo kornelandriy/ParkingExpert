@@ -26,7 +26,7 @@ namespace ParkingExpert.DB.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("ArrivedAt")
+                    b.Property<DateTime>("ArrivedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CarPlate")
@@ -35,8 +35,11 @@ namespace ParkingExpert.DB.Migrations
                     b.Property<DateTime?>("DepartureAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Payed")
-                        .HasColumnType("bit");
+                    b.Property<decimal>("PayedAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("PayedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
