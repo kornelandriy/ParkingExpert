@@ -10,7 +10,7 @@ using ParkingExpert.DB;
 namespace ParkingExpert.DB.Migrations
 {
     [DbContext(typeof(PEDataContext))]
-    [Migration("20200705130422_Initial")]
+    [Migration("20200705133030_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,6 +55,9 @@ namespace ParkingExpert.DB.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ParkingCapacity")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("PricePerHour")
                         .HasColumnType("decimal(18,2)");
 
@@ -66,6 +69,7 @@ namespace ParkingExpert.DB.Migrations
                         new
                         {
                             Id = 1,
+                            ParkingCapacity = 50,
                             PricePerHour = 10m
                         });
                 });

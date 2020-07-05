@@ -53,6 +53,9 @@ namespace ParkingExpert.DB.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ParkingCapacity")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("PricePerHour")
                         .HasColumnType("decimal(18,2)");
 
@@ -64,6 +67,7 @@ namespace ParkingExpert.DB.Migrations
                         new
                         {
                             Id = 1,
+                            ParkingCapacity = 50,
                             PricePerHour = 10m
                         });
                 });

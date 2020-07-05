@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using ParkingExpert.DB.Entities;
+﻿using ParkingExpert.DB.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace ParkingExpert.DB
 {
@@ -23,7 +21,8 @@ namespace ParkingExpert.DB
                     new Settings
                     {
                         Id = 1,
-                        PricePerHour = 10
+                        PricePerHour = 10,
+                        ParkingCapacity = 50
                     });
         }
     }

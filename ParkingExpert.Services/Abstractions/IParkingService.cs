@@ -8,5 +8,6 @@ namespace ParkingExpert.Services.Abstractions
         bool IsInParking(string carPlate);
         void AddToParking(string carPlate);
         void Exit(string carPlate);
+        int GetFreeSpots();
     }
 }

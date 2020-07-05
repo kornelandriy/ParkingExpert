@@ -30,7 +30,8 @@ namespace ParkingExpert.DB.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PricePerHour = table.Column<decimal>(nullable: false)
+                    PricePerHour = table.Column<decimal>(nullable: false),
+                    ParkingCapacity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,8 +40,8 @@ namespace ParkingExpert.DB.Migrations
 
             migrationBuilder.InsertData(
                 table: "Settings",
-                columns: new[] { "Id", "PricePerHour" },
-                values: new object[] { 1, 10m });
+                columns: new[] { "Id", "ParkingCapacity", "PricePerHour" },
+                values: new object[] { 1, 50, 10m });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

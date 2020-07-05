@@ -51,5 +51,14 @@ namespace ParkingExpert.Controllers
             _logger.LogInformation($"Car with plate: {carPlate} exit the parking.");
             return Ok($"Car with plate: {carPlate} exit the parking.");
         }
+        
+        [HttpGet("[action]")]
+        public IActionResult FreeSpots()
+        {
+            var freeSpots = _parkingService.GetFreeSpots();
+
+            _logger.LogInformation($"Free parking spots: {freeSpots}.");
+            return Ok(freeSpots);
+        }
     }
 }
