@@ -21,7 +21,7 @@ namespace ParkingExpert.Controllers
         }
 
         [HttpGet("[action]")]
-        public IActionResult Report(ReportType reportType)
+        public IActionResult Generate(ReportType reportType)
         {
             var items = _reportService.Generate(reportType);
             return Ok(items);
