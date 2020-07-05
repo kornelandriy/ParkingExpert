@@ -8,7 +8,6 @@ _2. Exit from the parking:_
  
 _3. Pay for the parking:_
     POST /api/payments/pay
-    Content-Type: application/json
     
     {
         "CarPlate": [carPlate],
