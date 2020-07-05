@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ParkingExpert.DB;
+using ParkingExpert.Repositories.Abstractions;
+using ParkingExpert.Repositories.Implementations;
+using ApiVersion = Microsoft.AspNetCore.Mvc.ApiVersion;
 
 namespace ParkingExpert
 {
@@ -25,6 +28,14 @@ namespace ParkingExpert
             services.AddDbContext<PEDataContext>(options =>
                 options.UseSqlServer(connectionString,
                     optionsBuilder => optionsBuilder.MigrationsAssembly(typeof(PEDataContext).GetTypeInfo().Assembly.GetName().Name)));
+            
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddApiVersioning(x =>  
+            {  
+                x.DefaultApiVersion = new ApiVersion(1, 0);  
+                x.AssumeDefaultVersionWhenUnspecified = true;  
+                x.ReportApiVersions = true;  
+            });  
             services.AddControllers();
         }
 

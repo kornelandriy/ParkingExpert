@@ -1,11 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ParkingExpert.DB.Entities
+﻿namespace ParkingExpert.DB.Entities
 {
-    public class Settings
+    public class Settings : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
         public decimal PricePerHour { get; set; }
     }
 }
