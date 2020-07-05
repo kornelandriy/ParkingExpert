@@ -18,6 +18,12 @@
         "projectReferences": {
           "C:\\repos\\ParkingExpert\\ParkingExpert.DB\\ParkingExpert.DB.csproj": {
             "projectPath": "C:\\repos\\ParkingExpert\\ParkingExpert.DB\\ParkingExpert.DB.csproj"
+          },
+          "C:\\repos\\ParkingExpert\\ParkingExpert.Models\\ParkingExpert.Models.csproj": {
+            "projectPath": "C:\\repos\\ParkingExpert\\ParkingExpert.Models\\ParkingExpert.Models.csproj"
+          },
+          "C:\\repos\\ParkingExpert\\ParkingExpert.Repositories\\ParkingExpert.Repositories.csproj": {
+            "projectPath": "C:\\repos\\ParkingExpert\\ParkingExpert.Repositories\\ParkingExpert.Repositories.csproj"
           }
         }
       }
@@ -30,6 +36,16 @@
   },
   "frameworks": {
     "netcoreapp3.1": {
+      "dependencies": {
+        "Microsoft.AspNet.WebApi.Versioning": {
+          "target": "Package",
+          "version": "[4.0.0, )"
+        },
+        "Microsoft.AspNetCore.Mvc.Versioning": {
+          "target": "Package",
+          "version": "[4.1.1, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",

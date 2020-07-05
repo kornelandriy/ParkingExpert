@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Microsoft.AspNet.WebApi.Versioning/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.WebApi.Versioning.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.WebApi.Versioning.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/4.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
         "type": "package",
         "compile": {
@@ -1296,10 +1317,65 @@
         "runtime": {
           "bin/placeholder/ParkingExpert.DB.dll": {}
         }
+      },
+      "ParkingExpert.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/ParkingExpert.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkingExpert.Models.dll": {}
+        }
+      },
+      "ParkingExpert.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ParkingExpert.DB": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ParkingExpert.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkingExpert.Repositories.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Microsoft.AspNet.WebApi.Versioning/4.0.0": {
+      "sha512": "//kF3v2aBWxLrmTvc1+42s+ne0wMYIUoTubIkOkou+4TBdvu5VPwln+5nowH3Uu0nPxmEIBN1w6g4jPb6u1nOw==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.versioning/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net45/Microsoft.AspNet.WebApi.Versioning.dll",
+        "lib/net45/Microsoft.AspNet.WebApi.Versioning.pdb",
+        "lib/net45/Microsoft.AspNet.WebApi.Versioning.xml",
+        "microsoft.aspnet.webapi.versioning.4.0.0.nupkg.sha512",
+        "microsoft.aspnet.webapi.versioning.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/4.1.1": {
+      "sha512": "ioFhRz5gm2Ny+t758Jab638eTG8Uui++klcH00EgBuU/BQbjkbFY+9xw/CkoAChIcrJsoQP2NKDYJ09zN5jR0g==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.versioning/4.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.pdb",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.xml",
+        "microsoft.aspnetcore.mvc.versioning.4.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.versioning.nuspec"
+      ]
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
       "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
       "type": "package",
@@ -5007,11 +5083,25 @@
       "type": "project",
       "path": "../ParkingExpert.DB/ParkingExpert.DB.csproj",
       "msbuildProject": "../ParkingExpert.DB/ParkingExpert.DB.csproj"
+    },
+    "ParkingExpert.Models/1.0.0": {
+      "type": "project",
+      "path": "../ParkingExpert.Models/ParkingExpert.Models.csproj",
+      "msbuildProject": "../ParkingExpert.Models/ParkingExpert.Models.csproj"
+    },
+    "ParkingExpert.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../ParkingExpert.Repositories/ParkingExpert.Repositories.csproj",
+      "msbuildProject": "../ParkingExpert.Repositories/ParkingExpert.Repositories.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "ParkingExpert.DB >= 1.0.0"
+      "Microsoft.AspNet.WebApi.Versioning >= 4.0.0",
+      "Microsoft.AspNetCore.Mvc.Versioning >= 4.1.1",
+      "ParkingExpert.DB >= 1.0.0",
+      "ParkingExpert.Models >= 1.0.0",
+      "ParkingExpert.Repositories >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5042,6 +5132,12 @@
           "projectReferences": {
             "C:\\repos\\ParkingExpert\\ParkingExpert.DB\\ParkingExpert.DB.csproj": {
               "projectPath": "C:\\repos\\ParkingExpert\\ParkingExpert.DB\\ParkingExpert.DB.csproj"
+            },
+            "C:\\repos\\ParkingExpert\\ParkingExpert.Models\\ParkingExpert.Models.csproj": {
+              "projectPath": "C:\\repos\\ParkingExpert\\ParkingExpert.Models\\ParkingExpert.Models.csproj"
+            },
+            "C:\\repos\\ParkingExpert\\ParkingExpert.Repositories\\ParkingExpert.Repositories.csproj": {
+              "projectPath": "C:\\repos\\ParkingExpert\\ParkingExpert.Repositories\\ParkingExpert.Repositories.csproj"
             }
           }
         }
@@ -5054,6 +5150,16 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Versioning": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Microsoft.AspNetCore.Mvc.Versioning": {
+            "target": "Package",
+            "version": "[4.1.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -5075,5 +5181,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebApi.Versioning 4.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebApi.Versioning",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

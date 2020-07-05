@@ -8,7 +8,8 @@ using ParkingExpert.DB.Entities;
 namespace ParkingExpert.Controllers
 {
     [ApiController]
-    [Route("api/home")]
+    [ApiVersion("1.0")]
+    [Route("[controller]")]
     public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;

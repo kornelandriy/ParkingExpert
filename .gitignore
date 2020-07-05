@@ -13,6 +13,8 @@
 /httpRequests/
 .idea/
 ParkingExpert.DB/obj/
+ParkingExpert.Models/obj/
+ParkingExpert.Repositories/obj/
 ParkingExpert/obj/
 .vs/
 bin/

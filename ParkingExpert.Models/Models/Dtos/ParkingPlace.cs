@@ -1,9 +1,10 @@
 ﻿using System;
 
-namespace ParkingExpert.DB.Entities
+namespace ParkingExpert.Models.Models.Dtos
 {
-    public class ParkingPlace : BaseEntity
+    public class ParkingPlace
     {
+        public int PlaceNumber { get; set; }
         public string CarPlate { get; set; }
         public bool Payed { get; set; }
         public DateTime? ArrivedAt { get; set; }
