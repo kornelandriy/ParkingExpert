@@ -34,6 +34,7 @@ namespace ParkingExpert
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient(typeof(IPaymentService), typeof(PaymentService));
             services.AddTransient(typeof(IParkingService), typeof(ParkingService));
+            services.AddTransient(typeof(IReportService), typeof(ReportService));
             services.AddApiVersioning(x =>  
             {  
                 x.DefaultApiVersion = new ApiVersion(1, 0);  
