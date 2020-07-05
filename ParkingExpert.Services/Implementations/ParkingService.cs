@@ -11,12 +11,15 @@ namespace ParkingExpert.Services.Implementations
     {
         private readonly ILogger<ParkingService> _logger;
         private readonly IRepository<ParkingPlace> _parkingPlaces;
+        private readonly IRepository<Settings> _settings;
 
         public ParkingService(ILogger<ParkingService> logger, 
-            IRepository<ParkingPlace> parkingPlaces)
+            IRepository<ParkingPlace> parkingPlaces, 
+            IRepository<Settings> settings)
         {
             _logger = logger;
             _parkingPlaces = parkingPlaces;
+            _settings = settings;
         }
 
         public ParkingPlace GetParkingPlaceByCarPlate(string carPlate)
@@ -49,6 +52,13 @@ namespace ParkingExpert.Services.Implementations
             }
             parkingPlace.DepartureAt = DateTime.Now;
             _parkingPlaces.Update(parkingPlace);
+        }
+
+        public int GetFreeSpots()
+        {
+            var parkingCapacity = _settings.GetAll().Single().ParkingCapacity;
+            var carsOnParking = _parkingPlaces.GetAll().Count(x => !x.DepartureAt.HasValue);
+            return parkingCapacity - carsOnParking;
         }
     }
 }

@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ParkingExpert.DB\ParkingExpert.DB.csproj" />
+      <ProjectReference Include="..\ParkingExpert.Models\ParkingExpert.Models.csproj" />
       <ProjectReference Include="..\ParkingExpert.Repositories\ParkingExpert.Repositories.csproj" />
     </ItemGroup>
 
