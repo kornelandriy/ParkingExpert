@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ParkingExpert.Models.Models.Dtos;
 using ParkingExpert.Services.Abstractions;
 
 namespace ParkingExpert.Controllers
@@ -27,26 +28,26 @@ namespace ParkingExpert.Controllers
             return Ok(amount);
         }
         
-        [HttpGet("[action]")]
-        public IActionResult Pay(string carPlate, decimal amount)
+        [HttpPost("[action]")]
+        public IActionResult Pay([FromBody]PayModel payModel)
         {
-            var amountToPay = _paymentService.GetAmountToPayByCarPlate(carPlate);
+            var amountToPay = _paymentService.GetAmountToPayByCarPlate(payModel.CarPlate);
 
-            if (amount < amountToPay)
+            if (payModel.Amount < amountToPay)
             {
-                _logger.LogError($"Amount ot pay for car with plate: {carPlate} is {amountToPay}");
-                return BadRequest($"Amount ot pay for car with plate: {carPlate} is {amountToPay}");
+                _logger.LogError($"Amount ot pay for car with plate: {payModel.CarPlate} is {amountToPay}");
+                return BadRequest($"Amount ot pay for car with plate: {payModel.CarPlate} is {amountToPay}");
             }
           
-            var isSucceeded = _paymentService.Pay(carPlate, amount);
+            var isSucceeded = _paymentService.Pay(payModel.CarPlate, payModel.Amount);
             if (!isSucceeded)
             {
-                _logger.LogError($"Amount ot pay for car with plate: {carPlate} is {amountToPay}");
-                return BadRequest($"Amount ot pay for car with plate: {carPlate} is {amountToPay}"); 
+                _logger.LogError($"Amount ot pay for car with plate: {payModel.CarPlate} is {amountToPay}");
+                return BadRequest($"Amount ot pay for car with plate: {payModel.CarPlate} is {amountToPay}"); 
             }
 
-            _logger.LogInformation($"Car with plate: {carPlate} payed {amount}");
-            return Ok($"Car with plate: {carPlate} payed {amount}");
+            _logger.LogInformation($"Car with plate: {payModel.CarPlate} payed {payModel.Amount}");
+            return Ok($"Car with plate: {payModel.CarPlate} payed {payModel.Amount}");
         }
     }
 }
